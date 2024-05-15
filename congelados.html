@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grãos</title>
+    <link rel="stylesheet" href="congelados.css">
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon">
+    <script src="bebidas.js"></script>
+    <script src="real.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <header class="logo"> <img src="imagens/logo.png" alt=""> <h1>CENTRAL<span>MARKET</span></h1></header>
+            <nav class="nav_header">
+                <ul class="ul_header">
+                    <li onclick="home()">Home</li>
+                    <li onclick="produtos()">Produtos</li>
+                    <li onclick="unidades()">Unidades</li>
+                    <li onclick="sobrenos()">Sobres Nós</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-icon-container">
+            <img src="imagens/carrinho.png" alt="carrinho" id="carrinho" onclick="carrinho()">
+            <img src="imagens/login.png" alt="login" id="login">
+            <img src="imagens/menu.png" alt="menu" id="menuzinho">
+        </div>
+    </div>
+    <div class="search-bar">
+        <p id="cep"> Loja - Centro | Entregar no CEP: 07115-000</p>
+        <img src="imagens/lupa.png" alt="lupa" id="lupa">
+        <input type="search" name="" id="search" class="search-content" placeholder=" Pesquisa por produtos ou marcas">
+        <button id="appbutton">Baixar o App</button>
+    </div>
+    <div class="search-products">
+        <div class="search-products-content">
+            <h5 onclick="produtos()">Todos</h5>
+            <h5 onclick="bebidas()">Bebidas</h5>
+            <h5 onclick="mercearia()">Mercearia</h5>
+            <h5 onclick="graos()">Grãos</h5>
+            <h5 onclick="limpeza()">Limpeza</h5>
+            <h5 onclick="congelados()">Congelados</h5>
+            <h5 onclick="higiene()">Higiene</h5>
+            <h5 onclick="eletrodomesticos()">Eletrodomésticos</h5>
+            <h5 onclick="hortifruti()">Hortifruti</h5>
+            <h5 onclick="basicos()">Básicos</h5>
+        </div>
+    </div>
+    <main>
+        <div class="filter-options">
+            <div class="categoria">
+                <h4 onclick="toggleSubcategorias()">Categorias <span id="arrow">&#9660;</span></h4>
+                <hr>
+                <div class="subcategorias" id="subcategorias">
+                    <div class="subcategoria">
+                        <input type="checkbox" name="sorvetes" id="" onclick="filtrarItens(this)">
+                        <label for="aguas">Sorvetes</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="diversos" id="" onclick="filtrarItens(this)">
+                        <label for="cervejas">Diversos</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-list">
+            <div class="products-content">
+                <div class="produto todos diversos">
+                    <img src="imagens/nuggets.png" alt="nuggets" id="nuggets">
+                    <h3>Nuggets Sadia 700mg</h3>
+                    <p class="preço">R$10,49<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/linguiçatoscana.png" alt="linguiça" id="linguiça">
+                    <h3>Linguiça Toscana Aurora</h3>
+                    <p class="preço">R$17,90<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/paodequeijocongelado.png" alt="paodequeijo" id="paodequeijo">
+                    <h3>Pão de Queijo Congelado</h3>
+                    <p class="preço">R$18,98<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos sorvetes">
+                    <img src="imagens/sorvete.png" alt="sorvete" id="sorvete">
+                    <h3>Sorvete Ben&Jerry's</h3>
+                    <p class="preço">R$6,79<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/brocoliscongelado.png" alt="brocolis" id="brocolis">
+                    <h3>Brócolis Congelados Daucy</h3>
+                    <p class="preço">R$11,75<p>
+                     <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/lasnha.png" alt="lasanha" id="lasanha">
+                    <h3>Lasanha à Bolonhesa Sadia</h3>
+                    <p class="preço">R$16,75<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/batatafrita.png" alt="batatafrita" id="batatafrita">
+                    <h3>Batata Palito McChain 1.5KG</h3>
+                    <p class="preço">R$30,39</p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="popup" id="popup">
+        Produto Adicionado ao Carrinho!
+    </div>
+</body>

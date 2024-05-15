@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas</title>
+    <link rel="stylesheet" href="bebidas.css">
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon">
+    <script src="bebidas.js"></script>
+    <script src="real.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <header class="logo"> <img src="imagens/logo.png" alt=""> <h1>CENTRAL<span>MARKET</span></h1></header>
+            <nav class="nav_header">
+                <ul class="ul_header">
+                    <li onclick="home()">Home</li>
+                    <li onclick="produtos()">Produtos</li>
+                    <li onclick="unidades()">Unidades</li>
+                    <li onclick="sobrenos()">Sobres Nós</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-icon-container">
+            <img src="imagens/carrinho.png" alt="carrinho" id="carrinho" onclick="carrinho()">
+            <img src="imagens/login.png" alt="login" id="login">
+            <img src="imagens/menu.png" alt="menu" id="menuzinho">
+        </div>
+    </div>
+    <div class="search-bar">
+        <p id="cep"> Loja - Centro | Entregar no CEP: 07115-000</p>
+        <img src="imagens/lupa.png" alt="lupa" id="lupa">
+        <input type="search" name="" id="search" class="search-content" placeholder=" Pesquisa por produtos ou marcas">
+        <button id="appbutton">Baixar o App</button>
+    </div>
+    <div class="search-products">
+        <div class="search-products-content">
+            <h5 onclick="produtos()">Todos</h5>
+            <h5 onclick="bebidas()">Bebidas</h5>
+            <h5 onclick="mercearia()">Mercearia</h5>
+            <h5 onclick="graos()">Grãos</h5>
+            <h5 onclick="limpeza()">Limpeza</h5>
+            <h5 onclick="congelados()">Congelados</h5>
+            <h5 onclick="higiene()">Higiene</h5>
+            <h5 onclick="eletrodomesticos()">Eletrodomésticos</h5>
+            <h5 onclick="hortifruti()">Hortifruti</h5>
+            <h5 onclick="basicos()">Básicos</h5>
+        </div>
+    </div>
+    <main>
+        <div class="filter-options">
+            <div class="categoria">
+                <h4 onclick="toggleSubcategorias()">Categorias <span id="arrow">&#9660;</span></h4>
+                <hr>
+                <div class="subcategorias" id="subcategorias">
+                    <div class="subcategoria">
+                        <input type="checkbox" name="aguas" id="" onclick="filtrarItens(this)">
+                        <label for="aguas">Águas</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="cervejas" id="" onclick="filtrarItens(this)">
+                        <label for="cervejas">Cervejas</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="cha" id="" onclick="filtrarItens(this)">
+                        <label for="cha">Chás</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="refrigerantes" id=""  onclick="filtrarItens(this)">
+                        <label for="refrigerantes">Refrigerantes</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="whiskies" id=""  onclick="filtrarItens(this)">
+                        <label for="whiskies">Whiskies</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="vinhos" id=""  onclick="filtrarItens(this)">
+                        <label for="vinhos">Vinhos</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="sucos" id=""  onclick="filtrarItens(this)">
+                        <label for="sucos">Sucos</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-list">
+            <div class="products-content">
+                <div class="produto todos refrigerantes">
+                    <img src="imagens/cocacolazero.png" alt="coca-cola-zero" id="cocacolazero">
+                    <h3> Coca-Cola Zero 2L</h3>
+                    <p class="preço">R$10,49<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos refrigerantes">
+                    <img src="imagens/fantalaranja.png" alt="fantalaranja" id="fantalaranja">
+                    <h3>Refrigerante Fanta Laranja 2L</h3>
+                    <p class="preço">R$8,49<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos refrigerantes">
+                    <img src="imagens/sprite.png" alt="sprite" id="sprite">
+                    <h3>Refrigerante Sprite 2L</h3>
+                    <p class="preço">R$9,49<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos refrigerantes">
+                    <img src="imagens/guarana.png" alt="guarana" id="guarana">
+                    <h3>Guaraná Antartica 1.5L</h3>
+                    <p class="preço">R$5,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos refrigerantes">
+                    <img src="imagens/cocacola.png" alt="cocacola">
+                    <h3>Coca Cola 2L</h3>
+                    <p class="preço">R$10,99</p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos refrigerantes">
+                    <img src="imagens/fantauva.png" alt="fantauva">
+                    <h3>Refrigerante Fanta Uva 2L</h3>
+                    <p class="preço">R$9,49</p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos aguas">
+                    <img src="imagens/agua500ml.png" alt="agua500ml" id="agua500ml">
+                    <h3>Água Crystal 500ml</h3>
+                    <p class="preço">R$1,59<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos aguas">
+                    <img src="imagens/aguabonafont.png" alt="aguabonafont" id="aguabonafont">
+                    <h3>Água Bonafont 2L</h3>
+                    <p class="preço">R$6,59<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos aguas">
+                    <img src="imagens/aguacomgas.png" alt="aguacomgas" id="aguacomgas">
+                    <h3>Água com Gás Minalba 500ml</h3>
+                    <p class="preço">R$2,29<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos cha">
+                    <img src="imagens/chaleao.png" alt="chaboldo" id="chaboldo">
+                    <h3>Chá Leão Boldo 10g</h3>
+                    <p class="preço">R$3,69<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos cha">
+                    <img src="imagens/chacamomila.png" alt="chacamomila" id="chacamomila">
+                    <h3>Chá Leão Camomila 10g</h3>
+                    <p class="preço">R$3,69<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos cervejas">
+                    <img src="imagens/skolbeats.png" alt="skolbeats" id="skolbeats">
+                    <h3>Skol Beats 269ml</h3>
+                    <p class="preço">R$3,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos cervejas">
+                    <img src="imagens/heineken.png" alt="heineken" id="heineken">
+                    <h3>Heineken 600ml</h3>
+                    <p class="preço">R$9,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos whiskies">
+                    <img src="imagens/blacklabel (1).png" alt="blacklabel" id="blacklabel">
+                    <h3>Whisky Black Label 750ml</h3>
+                    <p class="preço">R$119,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos vinhos">
+                    <img src="imagens/vinho.png" alt="vinhotinto" id="vinhotinto">
+                    <h3>Vinho Tinto Suave Bordô</h3>
+                    <p class="preço">R$23,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos vinhos">
+                    <img src="imagens/vinhoseco.png" alt="vinhoseco" id="vinhoseco">
+                    <h3>Vinho Seco Casillero Diablo</h3>
+                    <p class="preço">R$54,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos sucos">
+                    <img src="imagens/sucodeuva.png" alt="sucodeuva" id="sucodeuva">
+                    <h3>Suco de Uva Del Valle 1L</h3>
+                    <p class="preço">R$6,79<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos sucos">
+                    <img src="imagens/sucolaranja.png" alt="sucodelaranja" id="sucodelaranja">
+                    <h3>Suco de Laranja One 900ml</h3>
+                    <p class="preço">R$14,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="popup" id="popup">
+        Produto Adicionado ao Carrinho!
+    </div>
+</body>

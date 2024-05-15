@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="produtos.css">
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon">
+    <script src="produtos.js"></script>
+    <script src="real.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <header class="logo"> <img src="imagens/logo.png" alt=""> <h1>CENTRAL<span>MARKET</span></h1></header>
+            <nav class="nav_header">
+                <ul class="ul_header">
+                    <li onclick="home()">Home</li>
+                    <li onclick="produtos()">Produtos</li>
+                    <li onclick="unidades()">Unidades</li>
+                    <li onclick="sobrenos()">Sobres Nós</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-icon-container">
+            <img src="imagens/carrinho.png" alt="carrinho" id="carrinho" onclick="carrinho()">
+            <img src="imagens/login.png" alt="login" id="login">
+            <img src="imagens/menu.png" alt="menu" id="menuzinho">
+        </div>
+    </div>
+    <div class="search-bar">
+        <p id="cep"> Loja - Centro | Entregar no CEP: 07115-000</p>
+        <img src="imagens/lupa.png" alt="lupa" id="lupa">
+        <input type="search" name="" id="search" class="search-content" placeholder=" Pesquisa por produtos ou marcas">
+        <button id="appbutton">Baixar o App</button>
+    </div>
+    <div class="search-products">
+        <div class="search-products-content">
+            <h5 onclick="produtos()">Todos</h5>
+            <h5 onclick="bebidas()">Bebidas</h5>
+            <h5 onclick="mercearia()">Mercearia</h5>
+            <h5 onclick="graos()">Grãos</h5>
+            <h5 onclick="limpeza()">Limpeza</h5>
+            <h5 onclick="congelados()">Congelados</h5>
+            <h5 onclick="higiene()">Higiene</h5>
+            <h5 onclick="eletrodomesticos()">Eletrodomésticos</h5>
+            <h5 onclick="hortifruti()">Hortifruti</h5>
+            <h5 onclick="basicos()">Básicos</h5>
+        </div>
+    </div>
+    <main>
+        <div class="title">
+            <div class="underline-title"></div>
+            <h2>Todos</h2>
+        </div>
+        <section class="bebidas">
+            <div class="produto">
+                <img src="imagens/cocacolazero.png" alt="coca-cola-zero" id="cocacolazero">
+                <h3> Coca-Cola Zero 2L</h3>
+                <p class="preço">R$10,49<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/fantalaranja.png" alt="fantalaranja" id="fantalaranja">
+                <h3>Refrigerante Fanta Laranja 2L</h3>
+                <p class="preço">R$9,49<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/fantauva.png" alt="fantauva" id="fantauva">
+                <h3>Refrigerante Fanta Uva 2L</h3>
+                <p class="preço">R$9,49<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/sprite.png" alt="sprite" id="sprite">
+                <h3>Refrigerante Sprite 2L</h3>
+                <p class="preço">R$9,49<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/sucodeuva.png" alt="sucodeuva" id="sucodeuva">
+                <h3>Suco de Uva Del Valle 1L</h3>
+                <p class="preço">R$6,79<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/sucolaranja.png" alt="sucodelaranja" id="sucodelaranja">
+                <h3>Suco de Laranja One 900ml</h3>
+                <p class="preço">R$14,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/guarana.png" alt="guarana" id="guarana">
+                <h3>Guaraná Antartica 1.5L</h3>
+                <p class="preço">R$5,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/agua500ml.png" alt="agua500ml" id="agua500ml">
+                <h3>Água Crystal 500ml</h3>
+                <p class="preço">R$1,59<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/aguabonafont.png" alt="aguabonafont" id="aguabonafont">
+                <h3>Água Bonafont 2L</h3>
+                <p class="preço">R$6,59<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/aguacomgas.png" alt="aguacomgas" id="aguacomgas">
+                <h3>Água com Gás Minalba 500ml</h3>
+                <p class="preço">R$2,29<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/cocacola.png" alt="cocacola">
+                <h3>Coca Cola 2L</h3>
+                <p class="preço">R$10,99</p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/chaleao.png" alt="chaboldo" id="chaboldo">
+                <h3>Chá Leão Boldo 10g</h3>
+                <p class="preço">R$3,69<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/chacamomila.png" alt="chacamomila" id="chacamomila">
+                <h3>Chá Leão Camomila 10g</h3>
+                <p class="preço">R$3,69<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/skolbeats.png" alt="skolbeats" id="skolbeats">
+                <h3>Skol Beats 269ml</h3>
+                <p class="preço">R$3,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/blacklabel (1).png" alt="blacklabel" id="blacklabel">
+                <h3>Whisky Black Label 750ml</h3>
+                <p class="preço">R$119,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/vinho.png" alt="vinhotinto" id="vinhotinto">
+                <h3>Vinho Tinto Suave Bordô</h3>
+                <p class="preço">R$23,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/vinhoseco.png" alt="vinhoseco" id="vinhoseco">
+                <h3>Vinho Seco Casillero Diablo</h3>
+                <p class="preço">R$54,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/heineken.png" alt="heineken" id="heineken">
+                <h3>Heineken 600ml</h3>
+                <p class="preço">R$9,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/nuggets.png" alt="nuggets" id="nuggets">
+                <h3>Nuggets Sadia 700mg</h3>
+                <p class="preço">R$10,49<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/linguiçatoscana.png" alt="linguiça" id="linguiça">
+                <h3>Linguiça Toscana Aurora</h3>
+                <p class="preço">R$17,90<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/paodequeijocongelado.png" alt="paodequeijo" id="paodequeijo">
+                <h3>Pão de Queijo Congelado</h3>
+                <p class="preço">R$18,98<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/sorvete.png" alt="sorvete" id="sorvete">
+                <h3>Sorvete Ben&Jerry's</h3>
+                <p class="preço">R$6,79<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/brocoliscongelado.png" alt="brocolis" id="brocolis">
+                <h3>Brócolis Congelados Daucy</h3>
+                <p class="preço">R$11,75<p>
+                 <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/lasnha.png" alt="lasanha" id="lasanha">
+                <h3>Lasanha à Bolonhesa Sadia</h3>
+                <p class="preço">R$16,75<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/batatafrita.png" alt="batatafrita" id="batatafrita">
+                <h3>Batata Palito McChain 1.5KG</h3>
+                <p class="preço">R$30,39</p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/banana.png" alt="banana" id="banana">
+                <h3>Banana Nanica 900g</h3>
+                <p class="preço">R$7,69<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/fruta1.png" alt="mamaopapaia" id="mamaopapaia">
+                <h3>Mamão Papaya 500g</h3>
+                <p class="preço">R$12,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/fruta2.png" alt="manga" id="manga">
+                <h3>Manga Palmer 450g</h3>
+                <p class="preço">R$4,98<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/fruta4.png" alt="tomate" id="tomate">
+                <h3>Tomate 200g</h3>
+                <p class="preço">R$2,79<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/cenoura.png" alt="cenoura" id="cenoura">
+                <h3>Cenoura 450g</h3>
+                <p class="preço">R$7,75<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/7070-Abacaxi_Unidade_Unidade.png" alt="tomate" id="tomate">
+                <h3>Abacaxi 1 Unidade</h3>
+                <p class="preço">R$13,49<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/13140_Goiaba_Vermelha_Do_Justo_1.png" alt="tomate" id="tomate">
+                <h3>Goiaba Vermelha 500g</h3>
+                <p class="preço">R$7,19<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/ype amarelo.png" alt="ypeamarelo" id="ypeamarelo">
+                <h3>Detergente Ypê 500ml Neutro</h3>
+                <p class="preço">R$2,39<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/ype rosa.png" alt="yperosa" id="yperosa">
+                <h3>Detergente Ypê 500ml Neutro</h3>
+                <p class="preço">R$2,39<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/negocioazul.png" alt="negocioazul" id="negocioazul">
+                <h3>Amaciante Comfort 500ml</h3>
+                <p class="preço">R$8,98<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/negociolaranja.png" alt="negociolaranja" id="negociolaranja">
+                <h3>LysoForm Original 1L</h3>
+                <p class="preço">R$15,79<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/bombril.png" alt="brombril" id="bombril">
+                <h3>Esponja de Aço Bombril</h3>
+                <p class="preço">R$2,26<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/pinhosol.png" alt="pinhosol" id="pinhosol">
+                <h3>PinhoSol Lavanda 1L</h3>
+                <p class="preço">R$15,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/candida.png" alt="candida" id="candida">
+                <h3>Água Sanitária Candura 2L</h3>
+                <p class="preço">R$5,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/liquidificador.png" alt="liquidificador" id="liquidificador">
+                <h3>Liquidificador Britânia 900W</h3>
+                <p class="preço">R$99,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/paneladearroz.png" alt="paneladearroz" id="paneladearroz">
+                <h3>Panela de Arroz Britânia</h3>
+                <p class="preço">R$129,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/microondas.png" alt="microondas" id="microondas">
+                <h3>Micro-ondas Philco 110V</h3>
+                <p class="preço">R$381,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/fogao.png" alt="fogao" id="fogao">
+                <h3>Fogão Brastemp 5 Bocas </h3>
+                <p class="preço">R$1.745,10<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/geladeira.png" alt="geladeira" id="geladeira">
+                <h3>Geladeira Brastemp 375L</h3>
+                <p class="preço">R$2.525,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/maquinadelavar.png" alt="maquinadelavar" id="maquinadelavar">
+                <h3>Máquina Lavar Consul 9Kg</h3>
+                <p class="preço">R$1.525,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/graos.png" alt="graos" id="graos">
+                <h3>Quinoa Em Grãos 200g</h3>
+                <p class="preço"><strike>R$5,79</strike> R$3,75<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/leiteintegral.png" alt="leiteintegral" id="leiteintegral">
+                <h3>Leite Integral Italac 1L</h3>
+                <p class="preço">R$4,65<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/bolocenoura.png" alt="bolodecenoura" id="bolodecenoura">
+                <h3>Bolo de Cenoura Italac</h3>
+                <p class="preço">R$4,29<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/italakinho.png" alt="italakinho" id="italakinho">
+                <h3>Italakinho 200ml</h3>
+                <p class="preço">R$1,19<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/acholatado.png" alt="acholatado" id="acholatado">
+                <h3>Achocolatado Italac 400g</h3>
+                <p class="preço">R$5,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/cremedeleite.png" alt="cremdeleite" id="cremedeleite">
+                <h3>Creme de Leite Italac 200g</h3>
+                <p class="preço">R$2,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/leitecondensado.png" alt="leitecondensado" id="leitecondensado">
+                <h3>Leite Condensado Italac 395g</h3>
+                <p class="preço">R$5,49<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/sabonetedove.png" alt="sabonetedove" id="sabonetedove">
+                <h3>Sabonete em Barra Dove</h3>
+                <p class="preço">R$3,89<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/desodorantedove.png" alt="desodorantedove" id="desodorantedove">
+                <h3>Desodorante Dove</h3>
+                <p class="preço">R$13,89<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/absorvente.png" alt="absorvente" id="absorvente">
+                <h3>Absorvente Noturno Always 32</h3>
+                <p class="preço">R$25,39<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/saboneteliquido.png" alt="saboneteliquido" id="saboneteliquido">
+                <h3>Sabonete Líquido Lux</h3>
+                <p class="preço">R$3,89<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/cotonete.png" alt="cotonete" id="cotonete">
+                <h3>Cotonete 75 Unidades</h3>
+                <p class="preço">R$5,71<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/papelhigienico.png" alt="papelhigienico" id="papelhigienico">
+                <h3>Papel Higiênico 22 Unidades</h3>
+                <p class="preço">R$29,89<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/oleo.png" alt="oleo" id="oleo">
+                <h3>Óleo de Cozinha Liza</h3>
+                <p class="preço">R$4,89<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/arrozbrancocamil1kg.png" alt="arrozbrancocamil1kg" id="arrozbrancocamil1kg">
+                <h3>Arroz Branco Camil 1KG</h3>
+                <p class="preço">R$6,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/feijaocamil1kg.png" alt="feijao" id="feijao">
+                <h3>Arroz Branco Camil 1KG</h3>
+                <p class="preço">R$6,99<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/macarraoparafuso500g.png" alt="macarrao" id="macarrao">
+                <h3>Macarrão Parafuso 500g</h3>
+                <p class="preço">R$2,79<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/açucaruniaorefinado1kg.png" alt="açucaruniaorefinado1kg" id="açucaruniaorefinado1kg">
+                <h3>Açúcar União 1KG</h3>
+                <p class="preço">R$4,62<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="produto">
+                <img src="imagens/sal1kg.png" alt="sal" id="sal">
+                <h3>Sal 1KG</h3>
+                <p class="preço">R$4,62<p>
+                <button class="add-btn">Adicionar ao Carrinho</button>
+            </div>
+        </section>
+    </main>
+    <div class="popup" id="popup">
+        Produto Adicionado ao Carrinho!
+    </div>
+</body>

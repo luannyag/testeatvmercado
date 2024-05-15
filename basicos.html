@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grãos</title>
+    <link rel="stylesheet" href="basicos.css">
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon">
+    <script src="bebidas.js"></script>
+    <script src="real.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <header class="logo"> <img src="imagens/logo.png" alt=""> <h1>CENTRAL<span>MARKET</span></h1></header>
+            <nav class="nav_header">
+                <ul class="ul_header">
+                    <li onclick="home()">Home</li>
+                    <li onclick="produtos()">Produtos</li>
+                    <li onclick="unidades()">Unidades</li>
+                    <li onclick="sobrenos()">Sobres Nós</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-icon-container">
+            <img src="imagens/carrinho.png" alt="carrinho" id="carrinho" onclick="carrinho()">
+            <img src="imagens/login.png" alt="login" id="login">
+            <img src="imagens/menu.png" alt="menu" id="menuzinho">
+        </div>
+    </div>
+    <div class="search-bar">
+        <p id="cep"> Loja - Centro | Entregar no CEP: 07115-000</p>
+        <img src="imagens/lupa.png" alt="lupa" id="lupa">
+        <input type="search" name="" id="search" class="search-content" placeholder=" Pesquisa por produtos ou marcas">
+        <button id="appbutton">Baixar o App</button>
+    </div>
+    <div class="search-products">
+        <div class="search-products-content">
+            <h5 onclick="produtos()">Todos</h5>
+            <h5 onclick="bebidas()">Bebidas</h5>
+            <h5 onclick="mercearia()">Mercearia</h5>
+            <h5 onclick="graos()">Grãos</h5>
+            <h5 onclick="limpeza()">Limpeza</h5>
+            <h5 onclick="congelados()">Congelados</h5>
+            <h5 onclick="higiene()">Higiene</h5>
+            <h5 onclick="eletrodomesticos()">Eletrodomésticos</h5>
+            <h5 onclick="hortifruti()">Hortifruti</h5>
+            <h5 onclick="basicos()">Básicos</h5>
+        </div>
+    </div>
+    <main>
+        <div class="filter-options">
+            <div class="categoria">
+                <h4 onclick="toggleSubcategorias()">Categorias <span id="arrow">&#9660;</span></h4>
+                <hr>
+                <div class="subcategorias" id="subcategorias">
+                    <div class="subcategoria">
+                        <input type="checkbox" name="arroz" id="" onclick="filtrarItens(this)">
+                        <label for="aguas">Arroz</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="feijao" id="" onclick="filtrarItens(this)">
+                        <label for="cervejas">Feijão</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="diversos" id="" onclick="filtrarItens(this)">
+                        <label for="cervejas">Diversos</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-list">
+            <div class="products-content">
+                <div class="produto todos diversos">
+                    <img src="imagens/oleo.png" alt="oleo" id="oleo">
+                    <h3>Óleo de Cozinha Liza</h3>
+                    <p class="preço">R$4,89<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos arroz">
+                    <img src="imagens/arrozbrancocamil1kg.png" alt="arrozbrancocamil1kg" id="arrozbrancocamil1kg">
+                    <h3>Arroz Branco Camil 1KG</h3>
+                    <p class="preço">R$6,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos feijao">
+                    <img src="imagens/feijaocamil1kg.png" alt="feijao" id="feijao">
+                    <h3>Feijão Camil 1KG</h3>
+                    <p class="preço">R$6,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/macarraoparafuso500g.png" alt="macarrao" id="macarrao">
+                    <h3>Macarrão Parafuso 500g</h3>
+                    <p class="preço">R$2,79<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/açucaruniaorefinado1kg.png" alt="açucaruniaorefinado1kg" id="açucaruniaorefinado1kg">
+                    <h3>Açúcar União 1KG</h3>
+                    <p class="preço">R$4,62<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/sal1kg.png" alt="sal" id="sal">
+                    <h3>Sal 1KG</h3>
+                    <p class="preço">R$4,62<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="popup" id="popup">
+        Produto Adicionado ao Carrinho!
+    </div>
+</body>

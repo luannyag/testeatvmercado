@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grãos</title>
+    <link rel="stylesheet" href="limpeza.css">
+    <link rel="shortcut icon" href="/imagens/logo.png" type="image/x-icon">
+    <script src="bebidas.js"></script>
+    <script src="real.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <header class="logo"> <img src="imagens/logo.png" alt=""> <h1>CENTRAL<span>MARKET</span></h1></header>
+            <nav class="nav_header">
+                <ul class="ul_header">
+                    <li onclick="home()">Home</li>
+                    <li onclick="produtos()">Produtos</li>
+                    <li onclick="unidades()">Unidades</li>
+                    <li onclick="sobrenos()">Sobres Nós</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-icon-container">
+            <img src="imagens/carrinho.png" alt="carrinho" id="carrinho" onclick="carrinho()">
+            <img src="imagens/login.png" alt="login" id="login">
+            <img src="imagens/menu.png" alt="menu" id="menuzinho">
+        </div>
+    </div>
+    <div class="search-bar">
+        <p id="cep"> Loja - Centro | Entregar no CEP: 07115-000</p>
+        <img src="imagens/lupa.png" alt="lupa" id="lupa">
+        <input type="search" name="" id="search" class="search-content" placeholder=" Pesquisa por produtos ou marcas">
+        <button id="appbutton">Baixar o App</button>
+    </div>
+    <div class="search-products">
+        <div class="search-products-content">
+            <h5 onclick="produtos()">Todos</h5>
+            <h5 onclick="bebidas()">Bebidas</h5>
+            <h5 onclick="mercearia()">Mercearia</h5>
+            <h5 onclick="graos()">Grãos</h5>
+            <h5 onclick="limpeza()">Limpeza</h5>
+            <h5 onclick="congelados()">Congelados</h5>
+            <h5 onclick="higiene()">Higiene</h5>
+            <h5 onclick="eletrodomesticos()">Eletrodomésticos</h5>
+            <h5 onclick="hortifruti()">Hortifruti</h5>
+            <h5 onclick="basicos()">Básicos</h5>
+        </div>
+    </div>
+    <main>
+        <div class="filter-options">
+            <div class="categoria">
+                <h4 onclick="toggleSubcategorias()">Categorias <span id="arrow">&#9660;</span></h4>
+                <hr>
+                <div class="subcategorias" id="subcategorias">
+                    <div class="subcategoria">
+                        <input type="checkbox" name="detergente" id="" onclick="filtrarItens(this)">
+                        <label for="aguas">Detergentes</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="amaciantes" id="" onclick="filtrarItens(this)">
+                        <label for="cervejas">Amaciantes</label>
+                    </div>
+                    <div class="subcategoria">
+                        <input type="checkbox" name="diversos" id="" onclick="filtrarItens(this)">
+                        <label for="cha">Diversos</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-list">
+            <div class="products-content">
+                <div class="produto todos detergente">
+                    <img src="imagens/ype amarelo.png" alt="ypeamarelo" id="ypeamarelo">
+                    <h3>Detergente Ypê 500ml Neutro</h3>
+                    <p class="preço">R$2,39<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos detergente">
+                    <img src="imagens/ype rosa.png" alt="yperosa" id="yperosa">
+                    <h3>Detergente Ypê 500ml Neutro</h3>
+                    <p class="preço">R$2,39<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos amaciantes">
+                    <img src="imagens/negocioazul.png" alt="negocioazul" id="negocioazul">
+                    <h3>Amaciante Comfort 500ml</h3>
+                    <p class="preço">R$8,98<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/negociolaranja.png" alt="negociolaranja" id="negociolaranja">
+                    <h3>LysoForm Original 1L</h3>
+                    <p class="preço">R$15,79<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/bombril.png" alt="brombril" id="bombril">
+                    <h3>Esponja de Aço Bombril</h3>
+                    <p class="preço">R$2,26<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/pinhosol.png" alt="pinhosol" id="pinhosol">
+                    <h3>PinhoSol Lavanda 1L</h3>
+                    <p class="preço">R$15,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto todos diversos">
+                    <img src="imagens/candida.png" alt="candida" id="candida">
+                    <h3>Água Sanitária Candura 2L</h3>
+                    <p class="preço">R$5,99<p>
+                    <button class="add-btn">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="popup" id="popup">
+        Produto Adicionado ao Carrinho!
+    </div>
+</body>

@@ -1,0 +1,571 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'arial';
+    background-color: rgb(247, 247, 247)
+}
+
+.navbar{
+    width: 100%;
+    max-height: 80px;
+    background-color: #f8fcf4;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 99; 
+    align-content: center;
+    display: flex;
+}
+
+.header-inner-content{
+    max-width: 1300px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    height: 6rem;
+}
+
+.logo h1{
+    color: rgb(1, 112, 1);
+}
+
+.logo span{  
+    color: rgb(95, 165, 63);  
+}
+
+.navbar>div{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.nav_header{
+    margin-left: 20rem;
+    display: flex;
+    align-items: center;
+}
+
+.ul_header{
+    display: flex;
+    list-style: none;
+}
+
+.nav-icon-container{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.nav-icon-container img{
+    cursor: pointer;
+}
+
+.nav-icon-container img:hover{
+    transform: translateY(-4px);
+    transition: all 0.2s;
+
+}
+
+#menuzinho{
+    width: 30px;
+    height: 30px;
+
+   
+}
+
+#carrinho{
+   margin-right: 0;
+   width: 70px;
+}
+
+#login{
+    width: 55px;
+    margin-right: 10px;
+}
+.nav-icon-container img:first-child{
+    margin-right: 1rem;
+}
+
+.ul_header>li{
+    color: #005D04;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.ul_header>li:hover{
+    transform: translateY(-4px); /* para quando passar o mouse ele ir pra cima numa animaçao, porem esta brusco  */
+    transition: all 0.2s; /* para dar suavidade a animaçao */
+    font-weight: bold;
+}
+
+.header-bottom-side-left img{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 80px;
+    cursor: pointer;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 35%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #005D04;
+    padding: 10px;
+    z-index: 1;
+    width: 50px;
+    border: 0.5px solid #005D04;
+    border-radius: 300px; 
+}
+
+.header-bottom-side-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px; 
+}
+
+.banner {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.banner.active {
+    opacity: 1;
+}
+
+#arrow-prev {
+    position: absolute;
+    left: 15.5%;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+#arrow-next {
+    position: absolute;
+    right: 15.5%;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.header2{
+    background-color: rgb(247, 247, 247);
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.search-bar{
+    width: 100%;
+    height: 45px;
+    background-color: rgb(95, 165, 63);
+    align-content: center;
+    display: flex;
+    position:fixed;
+    z-index: 99;
+    /* align-items: center; */
+}
+
+.search-content{
+    width: 420px;
+    margin-top: 10px;
+    border-radius: 30px;
+    margin-bottom: 8px; 
+    border: 0.2px solid rgb(95, 165, 63);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin-left: 1px;
+    margin-right: 210px;
+}
+
+#lupa{
+    align-content: center;
+    margin-left: 60px; 
+    cursor: pointer;
+}
+
+#appbutton{
+    background-color: #005D04;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    border: 0.5px;
+    margin-top: 0.5rem;
+    margin-left: 24.5rem;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#appbutton:hover{
+    transform: translateY(-2px);
+    width: 101px;
+    height: 31px;
+    box-shadow: 0.2px 0.2px 0.2px #028028;
+    transition: 0.2s;
+}
+
+#cep{
+    align-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 3rem;
+    margin-right: 17.063rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#cep:hover{
+    color: rgb(233, 233, 233);
+}
+
+.middle-banners{
+    display: flex;
+    margin-left: 1.4rem;
+}
+.middle-banners-content img{
+    width: 282px;
+    height: 347.5px;
+    margin-right: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.middle-banners-content img:hover{
+    transform: translateY(-4px);
+    transition: 0.2s ease;
+}
+
+.underline-title{
+    width: 5px;
+    height: 30px;
+    background-color: #005D04;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.bebidas{
+    margin-bottom: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 80px;
+}
+
+.title{
+    display: flex;
+}
+.title h2{
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-top: 50px;
+    color: #005D04;
+}
+
+.produto{
+    display: inline-block;
+    width: 215px;
+    height: 350px;
+    margin: 0 10px;
+    text-align: center;
+    border-style: solid;
+    border-color: white;
+    border-width: 0.2px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    align-content: center; 
+}
+
+.preço{
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-left: 15px;
+    text-align: left;
+}
+
+.produto img{
+    width: 85;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.produto h3{
+    font-size: 14px;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-btn{
+    background-color: #028028;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3 ease;
+    border-radius: 50px;
+}
+
+.add-btn:hover{
+    background-color: #015e1d;
+    
+}
+
+#brocolis{
+    width: 150px;
+}
+
+#banana{
+    width: 200px;
+    height: 180px;
+}
+
+#mamaopapaia{
+    width: 200px;
+    height: 180px;
+}
+
+#manga{
+    width: 180px;
+    height: 180px;
+}
+
+#tomate{
+    height: 180px;
+}
+
+#cenoura{
+    height: 180px;
+}
+
+.span-congelados{
+    margin-left: 88.5rem;
+    color: #015e1d;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.title h2 span:hover{
+    text-decoration: underline;
+}
+
+.span-bebidas{
+    margin-left: 91.25rem;
+    color: #015e1d;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.span-hortifruti{
+    margin-left: 91.25rem;
+    color: #015e1d;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#lasanha{
+    width: 175px;
+}
+
+.footer_one{
+    display: flex;
+    width: 1100;
+    height: 155px;
+}
+
+.footer_two{
+    margin-left: 7rem;
+}
+
+.bottom_one1{
+    margin-left: 7rem;
+}
+
+.ul_bottom{
+    display: grid;
+    grid-gap: 15px;
+    list-style: none;
+}
+
+.ul_bottom>h4{
+    color:#005D04;
+}
+
+.ul_bottom>li{
+    color:#028028;
+    cursor: pointer;
+}
+
+.ul_bottom>li:hover{
+    color:rgb(0, 75, 0);
+    transform: translateY(-4px); /* para quando passar o mouse ele ir pra cima numa animaçao, porem esta brusco  */
+    font-weight: bold;
+    transition: all 0.2s; /* para dar suavidade a animaçao */
+}
+
+hr{
+    border: none;
+    height: 1px; /* espessura da linha */
+    background-color: #015e1d; /* cor da linha */
+    opacity: 0.1;
+    margin: 50px 125px 50px 100px
+   
+}
+
+#imageapp{
+    width: 300px;
+    height: 550px;
+    margin-left: 50px;
+    border-radius: 20px;
+    border-style:solid;
+    border-color: rgba(0, 87, 14, 0.425);
+}
+
+.linha-vertical {
+    border: none;
+    border-left: 1px solid #015e1d; 
+    height: 155px; /* Altura da linha vertical */
+    margin: 0px 0px 0px 75px;
+}
+
+.display1{
+    width: 1100px;
+    height: 155px;
+}
+.display-1{
+    display: grid;
+}
+
+footer{
+    display: flex;
+}
+
+.display2{
+    margin-top: 30px;
+}
+
+.footer_two>h4{
+    color:#005D04;
+}
+
+.footer_two p{
+    color:#028028;
+}
+
+
+.footer_two_imgs{
+    display: flex;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.footer_two_imgs img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+
+.display2{
+    display: flex;
+}
+
+.footer_three{
+    margin-left: 7rem;
+    color: #005D04;
+}
+
+.footer_three img{
+    width: 2.188rem;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.linha-vertical2 {
+    border: none;
+    border-left: 1px solid #015e1d; 
+    height: 9.688rem; /* Altura da linha vertical */
+    margin: 0px 0px 0px 15px;
+}
+
+#instagram{
+    width: 1.875rem;
+    margin-left: 0.313rem;
+}
+
+#facebook{
+    width: 1.875rem;
+    margin-left: 0.313rem;
+}
+
+#x{
+    width: 1.875rem;
+    height: 1.875rem;
+}
+
+#youtube{
+    margin-left: 0.313rem;
+}
+
+.linha-vertical3{
+    border: none;
+    border-left: 1px solid #015e1d; 
+    height: 155px; /* Altura da linha vertical */
+    margin: 0px 0px 0px 5.938rem;
+}
+
+#playstore{
+    width: 7.875rem;
+    margin-top: 0.625rem;
+    cursor: pointer;
+}
+
+.footer-four{
+    margin-left: 7rem;
+    color: #005D04;
+}
+
+.copyright{
+    height: 70px;
+}
+.copyright>p{
+    text-align: center;
+}
+
+.popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #005D04;;
+    color: #f8fcf4;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: none;
+}

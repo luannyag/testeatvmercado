@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="testecarrinho.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <header class="logo"> <img src="imagens/logo.png" alt=""> <h1>CENTRAL<span>MARKET</span></h1></header>
+            <nav class="nav_header">
+                <ul class="ul_header">
+                    <li onclick="home()">Home</li>
+                    <li onclick="produtos()">Produtos</li>
+                    <li onclick="unidades()">Unidades</li>
+                    <li onclick="sobrenos()">Sobres Nós</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-icon-container">
+            <img src="imagens/carrinho.png" alt="carrinho" id="carrinho">
+            <img src="imagens/login.png" alt="login" id="login">
+            <img src="imagens/menu.png" alt="menu" id="menuzinho">
+        </div>
+    </div>
+    <div class="search-bar">
+        <p id="cep"> Loja - Centro | Entregar no CEP: 07115-000</p>
+        <img src="imagens/lupa.png" alt="lupa" id="lupa">
+        <input type="search" name="" id="search" class="search-content" placeholder=" Pesquisa por produtos ou marcas">
+        <button id="appbutton">Baixar o App</button>
+    </div>
+    <div class="search-products">
+        <div class="search-products-content">
+            <h5 onclick="produtos()">Todos</h5>
+            <h5 onclick="bebidas()">Bebidas</h5>
+            <h5 onclick="mercearia()">Mercearia</h5>
+            <h5 onclick="graos()">Grãos</h5>
+            <h5 onclick="limpeza()">Limpeza</h5>
+            <h5 onclick="congelados()">Congelados</h5>
+            <h5 onclick="higiene()">Higiene</h5>
+            <h5 onclick="eletrodomesticos()">Eletrodomésticos</h5>
+            <h5 onclick="hortifruti()">Hortifruti</h5>
+            <h5 onclick="basicos()">Básicos</h5>
+        </div>
+    </div>
+    <div class="carrinhodisplay">
+        <h1 class="carrinhotitulo"> <img src="imagens/carrinho.png" alt="" id="carrinhoicone">Meu Carrinho</h1>
+        <nav class="table">
+            <ul class="table-ul" id="info-carrinho">
+                <li>Quantidade</li>
+                <li>Total</li>
+            </ul>
+        </nav>
+        <div id="itens-carrinho">
+            
+        </div>
+        
+    </div>
+    <script src="real.js"></script>
+    <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const botoesAdicionarCarrinho = document.querySelectorAll('.add-btn');
+
+    botoesAdicionarCarrinho.forEach(botao => {
+        botao.addEventListener('click', adicionarItemAoCarrinho);
+    });
+    
+
+    function adicionarItemAoCarrinho(event) {
+        const produto = event.target.closest('.produto');
+        const nome = produto.querySelector('h3').textContent;
+        const preco = produto.querySelector('.preço').textContent;
+        const imagem = produto.querySelector('img').src;
+        const idImagem = produto.querySelector('img').getAttribute('id');
+
+        const itemCarrinho = {
+            id: idImagem,
+            nome: nome,
+            preco: preco,
+            imagem: imagem,
+            qtd: 1 // Definindo a quantidade inicial como 1
+        };
+
+        let itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+        itensCarrinho.push(itemCarrinho); // Adicionando o item ao carrinho
+        localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+
+        atualizarCarrinhoNaPagina();
+        alert("Produto adicionado ao carrinho!");
+    }
+
+    function atualizarCarrinhoNaPagina() {
+        const carrinhoElemento = document.getElementById('itens-carrinho');
+        carrinhoElemento.innerHTML = '';
+
+        let itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+
+        const infoCarrinho = document.getElementById('info-carrinho');
+        if (itensCarrinho.length === 0) {
+            infoCarrinho.style.display = 'none';
+            mostrarMensagemCarrinhoVazio();
+        } else {
+            infoCarrinho.style.display = 'flex';
+
+            let subtotal = 0;
+
+            itensCarrinho.forEach(itemCarrinho => {
+                const divItem = document.createElement('div');
+                divItem.classList.add('item-carrinho');
+
+                const imagem = document.createElement('img');
+                imagem.src = itemCarrinho.imagem;
+                imagem.id = itemCarrinho.id;
+                divItem.appendChild(imagem);
+
+                const divItemTexto = document.createElement('div');
+                divItemTexto.classList.add('item-texto');
+
+                const nome = document.createElement('p');
+                nome.textContent = itemCarrinho.nome;
+                nome.classList.add('nomes');
+                divItemTexto.appendChild(nome);
+                
+                const preco = document.createElement('p');
+                preco.textContent = itemCarrinho.preco;
+                preco.classList.add('preço');
+                divItemTexto.appendChild(preco);
+
+                divItem.appendChild(divItemTexto);
+
+                const quantidade = document.createElement('div');
+                quantidade.classList.add('quantidade');
+
+                const botaoDecremento = document.createElement('button');
+                botaoDecremento.textContent = '-';
+                botaoDecremento.setAttribute('data-item-id', itemCarrinho.id); // Adiciona o ID do item como atributo data
+                quantidade.appendChild(botaoDecremento);
+
+                const contadorQuantidade = document.createElement('input');
+                contadorQuantidade.type = 'number';
+                contadorQuantidade.value = itemCarrinho.qtd;
+                contadorQuantidade.setAttribute('min', '1'); 
+                quantidade.appendChild(contadorQuantidade);
+
+                const botaoIncremento = document.createElement('button');
+                botaoIncremento.textContent = '+';
+                botaoIncremento.setAttribute('data-item-id', itemCarrinho.id); // Adiciona o ID do item como atributo data
+                quantidade.appendChild(botaoIncremento);
+
+                const botaoRemover = document.createElement('button');
+                botaoRemover.textContent = 'Remover';
+                botaoRemover.classList.add('remover');
+                quantidade.appendChild(botaoRemover);
+
+                const precoNumerico = parseFloat(itemCarrinho.preco.replace('R$', '').replace(',', '.'));
+                const totalItem = precoNumerico * itemCarrinho.qtd;
+
+                subtotal += totalItem;
+
+                const totalItemElemento = document.createElement('p');
+                totalItemElemento.textContent = `Total: R$ ${totalItem.toFixed(2)}`; 
+                totalItemElemento.classList.add('total-item');
+                divItem.appendChild(totalItemElemento);
+
+                divItem.appendChild(quantidade);
+                carrinhoElemento.appendChild(divItem);
+
+                botaoDecremento.addEventListener('click', (event) => {
+                    const itemId = event.target.getAttribute('data-item-id');
+                    const itemCarrinho = itensCarrinho.find(item => item.id === itemId);
+                    if (itemCarrinho.qtd > 1) {
+                        itemCarrinho.qtd--;
+                        contadorQuantidade.value = itemCarrinho.qtd; // Atualiza o valor do input
+                        atualizarQuantidade(itemCarrinho.id, itemCarrinho.qtd);
+                        atualizarTotalItem(itemCarrinho, itemCarrinho.qtd); // Atualiza o preço total
+                    }
+                });
+
+                botaoIncremento.addEventListener('click', (event) => {
+                    const itemId = event.target.getAttribute('data-item-id');
+                    const itemCarrinho = itensCarrinho.find(item => item.id === itemId);
+                    itemCarrinho.qtd++;
+                    contadorQuantidade.value = itemCarrinho.qtd; // Atualiza o valor do input
+                    atualizarQuantidade(itemCarrinho.id, itemCarrinho.qtd);
+                    atualizarTotalItem(itemCarrinho, itemCarrinho.qtd); // Atualiza o preço total
+                });
+
+                botaoRemover.addEventListener('click', () => {
+                    itensCarrinho = itensCarrinho.filter(i => i.id !== itemCarrinho.id);
+                    localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+                    atualizarCarrinhoNaPagina();
+                });
+
+                contadorQuantidade.addEventListener('change', (event) => {
+                    const itemId = event.target.getAttribute('data-item-id');
+                    const itemCarrinho = itensCarrinho.find(item => item.id === itemId);
+                    const novaQuantidade = parseInt(event.target.value); // Obtém o novo valor do input
+                    itemCarrinho.qtd = novaQuantidade;
+                    atualizarQuantidade(itemCarrinho.id, itemCarrinho.qtd);
+                    atualizarTotalItem(itemCarrinho, novaQuantidade); // Atualiza o preço total
+                });
+
+                function atualizarTotalItem(itemCarrinho, novaQuantidade) {
+                    const precoNumerico = parseFloat(itemCarrinho.preco.replace('R$', '').replace(',', '.'));
+                    const totalItem = precoNumerico * novaQuantidade;
+                    totalItemElemento.textContent = `Total: R$ ${totalItem.toFixed(2)}`;
+                }
+            });
+
+            const divGrupoTotal = document.createElement('div');
+            divGrupoTotal.classList.add('grupo-total');
+
+            const divSubtotal = document.createElement('div');
+            divSubtotal.textContent = `Subtotal: R$ ${subtotal.toFixed(2)}`;
+            divSubtotal.classList.add('subtotal')
+            divGrupoTotal.appendChild(divSubtotal);
+
+            const hr1 = document.createElement('hr');
+            divGrupoTotal.appendChild(hr1);
+
+            const divTaxaEntrega = document.createElement('div');
+            divTaxaEntrega.textContent = 'Taxa de entrega: Grátis';
+            divTaxaEntrega.classList.add('taxa')
+            divGrupoTotal.appendChild(divTaxaEntrega);
+
+            const hr2 = document.createElement('hr');
+            divGrupoTotal.appendChild(hr2);
+
+            const divTotal = document.createElement('div');
+            divTotal.textContent = `Total: R$ ${subtotal.toFixed(2)}`;
+            divTotal.classList.add('total')
+            divGrupoTotal.appendChild(divTotal);
+
+            const botaoContinuar = document.createElement('button');
+            botaoContinuar.textContent = 'Continuar';
+            botaoContinuar.classList.add('botao-continuar'); 
+            carrinhoElemento.appendChild(botaoContinuar);
+            botaoContinuar.addEventListener('click', function() {
+            window.location.href = 'continuar.html';
+
+            });
+
+            carrinhoElemento.appendChild(divGrupoTotal);
+        }
+    }
+
+    function atualizarQuantidade(id, novaQuantidade) {
+        let itensCarrinho = JSON.parse(localStorage.getItem('itensCarrinho')) || [];
+        const itemCarrinho = itensCarrinho.find(item => item.id === id);
+        if (itemCarrinho) {
+            itemCarrinho.qtd = novaQuantidade;
+            localStorage.setItem('itensCarrinho', JSON.stringify(itensCarrinho));
+            atualizarCarrinhoNaPagina();
+        }
+    }
+
+    function mostrarMensagemCarrinhoVazio() {
+        const carrinhoElemento = document.getElementById('itens-carrinho');
+        carrinhoElemento.innerHTML = '';
+
+        const mensagemVazio = document.createElement('p');
+        mensagemVazio.textContent = 'Seu carrinho está vazio';
+        mensagemVazio.classList.add('mensagem-vazio');
+        carrinhoElemento.appendChild(mensagemVazio);
+
+        const botaoEscolherProdutos = document.createElement('button');
+        botaoEscolherProdutos.classList.add('escolher-produtos');
+        botaoEscolherProdutos.textContent = 'Escolher produtos';
+        botaoEscolherProdutos.addEventListener('click', () => {
+            window.location.href = 'produtos.html';
+        });
+        carrinhoElemento.appendChild(botaoEscolherProdutos);
+    }
+
+    atualizarCarrinhoNaPagina();
+});
+
+    </script>
+</body>
+</html>
